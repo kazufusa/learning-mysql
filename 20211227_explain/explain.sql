@@ -29,6 +29,4 @@ EXPLAIN SELECT * FROM
     JOIN City ON Country.Capital = City.ID
 WHERE CountryLanguage.IsOfficial = 'T';
 
-DROP TABLE IF EXISTS CountryLanguage;
-DROP TABLE IF EXISTS Country;
-DROP TABLE IF EXISTS City;
+DROP TABLE IF EXISTS CountryLanguage, Country, City;
