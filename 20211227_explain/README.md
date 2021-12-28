@@ -3,7 +3,7 @@
 ## Start mysql server with Docker
 
 ```sh
-$ docker run --rm --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw MYSQL_DATABASE=database -d mysql:latest
+$ docker run --rm --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=database -d mysql:latest
 ```
 
 ## Try EXPLAIN SQL including JOIN
