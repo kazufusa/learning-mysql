@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id   INTEGER NOT NULL PRIMARY KEY,
-  name STRING
+  name TEXT
 );
 
 INSERT INTO users (id, name) VALUES
