@@ -23,4 +23,7 @@ services:
 
 networks:
   demo-network:
-    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.23.0.0/16
