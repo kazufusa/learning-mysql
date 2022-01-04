@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  primary:
+    hostname: mysql-primary
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: primary-pw
+    volumes:
+      - ./replication-primary.cnf:/etc/mysql/conf.d/replication-primary.cnf
+    networks:
+      - demo-network
+
+  replica:
+    hostname: mysql-replica
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: replica-pw
+    volumes:
+      - ./replication-replica.cnf:/etc/mysql/conf.d/replication-replica.cnf
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    driver: bridge
