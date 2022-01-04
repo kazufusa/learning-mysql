@@ -187,6 +187,20 @@ Database changed
 
 # TIPS
 
+## binlog_format
+
+MySQL 5.7.7以降のデフォルトはROW
+
+## innodb_support_xa
+
+常に1が望ましい.
+
+https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-10.html
+
+MySQL 8ではオプションが廃止され無効に出来なくなった.
+
+https://dev.mysql.com/doc/refman/8.0/ja/added-deprecated-removed.html
+
 ## MySQLで権限付きユーザを作成する
 
 ```sql
