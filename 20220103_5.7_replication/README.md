@@ -187,6 +187,31 @@ Database changed
 
 # TIPS
 
+## MySQLで権限付きユーザを作成する
+
+```sql
+GRANT REPLICATION SLAVE ON *.* TO 'repl'@'172.23.0.%' IDENTIFIED BY 'repl';
+```
+
+## FLUSH PRIVILEGEが必要な場合とは
+
+https://dev.mysql.com/doc/refman/5.7/en/privilege-changes.html
+
+`mysql.user`を直接操作する場合に必要な様子. 今回は不要.
+
+## DockerでIPセグメントを設定する
+
+https://docs.docker.com/compose/compose-file/compose-file-v3/#ipam
+
+```yml
+networks:
+  demo-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.23.0.0/16
+```
+
 # reference
 
 - エキスパートのためのMySQL運用・管理 トラブルシューティングガイド
