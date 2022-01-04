@@ -37,7 +37,7 @@ Query OK, 0 rows affected, 1 warning (0.01 sec)
 
 > SHOW MASTER STATUS\G
 *************************** 1. row ***************************
-             File: ON.000003
+             File: binlog.000003
          Position: 486
      Binlog_Do_DB:
  Binlog_Ignore_DB:
@@ -52,7 +52,7 @@ $ docker-compose exec replica mysql -uroot -preplica-pw
 > CHANGE MASTER TO
     ->   MASTER_HOST='mysql-primary',
     ->   MASTER_PORT=3306,
-    ->   MASTER_LOG_FILE='ON.000003',
+    ->   MASTER_LOG_FILE='binlog.000003',
     ->   MASTER_LOG_POS=486;
 Query OK, 0 rows affected (0.05 sec)
 
@@ -66,11 +66,11 @@ Query OK, 0 rows affected, 1 warning (0.01 sec)
                   Master_User: repl
                   Master_Port: 3306
                 Connect_Retry: 60
-              Master_Log_File: ON.000003
+              Master_Log_File: binlog.000003
           Read_Master_Log_Pos: 486
                Relay_Log_File: mysql-replica-relay-bin.000002
                 Relay_Log_Pos: 313
-        Relay_Master_Log_File: ON.000003
+        Relay_Master_Log_File: binlog.000003
              Slave_IO_Running: Yes
             Slave_SQL_Running: Yes
               Replicate_Do_DB:

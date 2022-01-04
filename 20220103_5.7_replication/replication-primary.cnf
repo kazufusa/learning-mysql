@@ -7,11 +7,13 @@ prompt = '\\U@\\h:\\p [\\d] \C>'
 sync_binlog                      = 1
 binlog_error_action              = ABORT_SERVER
 binlog_format                    = ROW
-log_bin                          = ON
+log_bin                          = binlog
 log_statements_unsafe_for_binlog = ON
 master_info_repository           = TABLE
 relay_log_info_repository        = TABLE
 slave_skip_errors                = OFF
+innodb_support_xa                = 1
+innodb_flush_log_at_trx_commit   = 1
 
 # changed parameters for replication
 binlog_rows_query_log_events     = ON
