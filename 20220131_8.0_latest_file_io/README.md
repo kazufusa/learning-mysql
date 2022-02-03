@@ -16,6 +16,14 @@ $ docker exec -it some-mysql bash
 # strace -y -s5 -t -f -o ./strace.out -p 1
 ```
 
+#### strace options
+
+> -s strsize     limit length of print strings to STRSIZE chars (default 32)<br>
+> -f             follow forks<br>
+> -t             print absolute timestamp<br>
+> -y             print paths associated with file descriptor arguments<br>
+
+
 <!-- # strace -s2048 -f -o ./strace.out docker-entrypoint.sh mysqld -->
 <!-- # strace -tt -f -e trace=file,open,close,write -p 1 -->
 <!-- # strace -tt -p 1 -->
